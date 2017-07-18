@@ -1,0 +1,34 @@
+<?php
+namespace App\Providers;
+use App\Models\Article;
+use App\Models\Nav;
+use Illuminate\Support\ServiceProvider;
+use PermissionRepository;
+use Auth,Route;
+class FrontServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        view()->composer('*', function ($view) {
+            //共享菜单数据
+            $navs = Nav::statusEq1()->orderBy('sort','desc')->get()->toArray();
+            $new_articles = Article::statusEq1()->limit(8)->select('id','img_url','title','description','created_at','view')->orderBy('created_at','desc')->limit(8)->get()->toArray();
+
+            $view->with(compact(['navs','new_articles']));
+        });
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+    }
+}

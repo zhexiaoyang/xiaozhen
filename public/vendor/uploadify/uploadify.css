@@ -1,0 +1,176 @@
+/*
+Uploadify
+Copyright (c) 2012 Reactive Apps, Ronnie Garcia
+Released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
+*/
+.img_list {
+	height: 140px;
+	margin-left: 155px;
+	margin-top: -10px;
+	width: 550px;
+}
+.img_list_max {
+	height: 280px;
+}
+.img_list div {
+	float: left;
+}
+.img_list .add_img{
+	width: 126px;
+	height: 126px;
+	border: 1px dashed #e6e6e6;
+	background-image: url("/vendor/uploadify/img/add-img.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	padding: 2.5px;
+	padding-top: 1.5px;
+	padding-left: 1.5px;
+	margin-top: 10px;
+}
+.img_list .add_img:hover {
+	background-color: #f6f6f6;
+}
+.img_list .img_item{
+	border: 1px solid #e6e6e6;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.img_list .img_item img{
+	width: 125px;
+	height: 125px;
+}
+.img_list .img_item .img_main {
+	width: 44px;
+	height: 44px;
+	display: none;
+	background-image: url("/vendor/uploadify/img/main-img.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	margin-top: -125px;
+}
+.img_list .img_item .img_close {
+	display: none;
+}
+.img_list .img_item:hover .img_close {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background-image: url("/vendor/uploadify/img/close-img.png");
+	background-repeat: no-repeat;
+	position: absolute;
+	margin-top: -125px;
+	margin-left: 95px;
+	cursor: pointer;
+}
+.img_list .img_item .img_button {
+	display: none;
+}
+.img_list .img_item .img_button .left {
+	width:50%;
+	text-align: left;
+	color: #000;
+	float: left;
+	height: 24px;
+	line-height: 22px;
+}
+.img_list .img_item .img_button .right {
+	width:50%;
+	text-align: right;
+	color: #000;
+	float: right;
+	height: 24px;
+	line-height: 22px;
+}
+.img_list .img_item .img_button .left:hover {
+	color: #333;
+}
+.img_list .img_item .img_button .right:hover {
+	color: #333;
+}
+.img_list .img_item .img_button {
+	width: 125px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	background-color: #b2b2b2;
+	position: absolute;
+	margin-top: -24px;
+	cursor: pointer;
+	opacity: 0.8;
+}
+.img_list .img_activi .img_main {
+	display: inline-block;
+}
+.img_list .img_activi:hover .img_button {
+	/*display: none;*/
+}
+.img_list .error{
+	border: 1px solid #E74C3C;
+}
+.img_list .error .error-txt{
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	line-height: 25px;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: bottom;
+	padding-top: 80px;
+	color: #E74C3C;
+	background-position-x: -760px;
+	background-size: 810% 100%;
+	background-image: url("/vendor/uploadify/img/imgs-bg.png");
+}
+.img_list .error:hover  .img_close{
+	display: none;
+}
+.img_list .error:hover {
+	display: none;
+}
+.img_list .progress{
+	position: absolute;
+	width: 125px;
+	height: 25px;
+	margin-top: -25px;
+}
+.img_list .progress .per-
+{
+	position: absolute;
+	height: 25px;
+	background-color: #f26774;
+}
+.img_list .progress .per-cent{
+	position: absolute;
+	width: 30px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #fff;
+}
+.uploadify {
+position: relative;
+margin-bottom: 1em;
+}
+.uploadify-button {
+background-color: #CFCFCF;
+border: 2px solid #808080;
+color: #FFFFFF;
+font: bold 12px Arial, Helvetica, sans-serif;
+text-align: center;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+width: 100%;
+}
+.uploadify:hover .uploadify-button {
+background-color: #C9C9C9;
+}
+.uploadify-button-text{
+line-height: 200px;
+}
+
+.uploadify-queue{
+clear: both;display: none;
+}
