@@ -9,7 +9,6 @@ class Home
 
     public function handle($request, Closure $next, $guard = null)
     {
-        dd();
         if(Config::get('web.web_status') == 0) {
             echo "网站暂时关闭";die;
         }
