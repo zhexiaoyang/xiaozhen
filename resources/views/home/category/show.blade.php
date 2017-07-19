@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('title')
-    <title>{{Config::get('web.web_title')}}</title>
+    <title>{{isset($category)?$category.'-':''}}{{Config::get('web.web_title')}}</title>
 @endsection
 @section('content')
     <!--position start-->

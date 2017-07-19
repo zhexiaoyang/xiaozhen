@@ -1,5 +1,6 @@
 @extends('layouts.home')
 @section('title')
+    <title>{{isset($article['title'])?$article['title'].'-':''}}{{Config::get('web.web_title')}}</title>
     {{--@if($article)--}}
 {{--        <title>{{$article->art_title}}-{{Config::get('web.web_title')}}</title>--}}
 {{--        <meta name="keywords" content="{{$article->art_tag}}" />--}}
