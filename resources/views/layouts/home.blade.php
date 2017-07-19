@@ -25,9 +25,9 @@
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="navsm">
-                <form class="navbar-form navbar-right" role="search">
+                <form action="{{url('search')}}.html" class="navbar-form navbar-right" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="输入关键词">
+                        <input name="key" type="text" class="form-control" placeholder="输入关键词" value="{{isset($key)?$key:''}}">
                     </div>
                     <button type="submit" class="btn btn-default">搜索</button>
                 </form>

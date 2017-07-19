@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <i class="home_icon"></i><a href="{{asset('/')}}">首页</a>&rsaquo;<span>{{$category}}</span>
+                    <i class="home_icon"></i><a href="{{asset('/')}}">首页</a>&rsaquo;<span>{{$key}}</span>
                 </div>
             </div>
         </div>
@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-sm-8 col-md-8 main_ct">
                     <div class="row">
+                        @if(!empty($articles))
                         @foreach($articles as $art)
                             <div class="col-sm-4 col-md-4 citem">
                                 <a href="{{url('/'.$art->id)}}.html" class="citem_card">
@@ -38,9 +39,10 @@
                             </div>
                         @endforeach
                         <nav class="text-center" style="clear: both;">
-                            {{ $articles->links()}}
+                            {{ $articles->appends(['key' => $key])->links()}}
                             {{--{!! $artcles->links() !!}--}}
                         </nav>
+                        @endif
                     </div>
                 </div>
                 <aside class="col-sm-4 col-md-4 sidebar">
