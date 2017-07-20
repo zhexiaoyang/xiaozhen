@@ -1,0 +1,122 @@
+.xysay .portlet.light.portlet-fit {
+    padding: 0;
+}
+
+.xysay .portlet.light.bg-inverse {
+    background: #ebebeb;
+}
+.xysay .portlet {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.xysay .portlet.light.portlet-fit>.portlet-body {
+    padding: 10px 20px 20px;width: 60%;margin: 0 auto;
+}
+.xysay .timeline {
+    margin: 0 0 30px;
+    padding: 0;
+    position: relative;
+}
+.xysay .timeline .timeline-item {
+    margin: 0;
+    padding: 0;
+}
+.xysay .timeline .timeline-badge {
+    float: left;
+    position: relative;
+    padding-right: 30px;
+    height: 150px;
+    width: 150px;
+}
+.xysay .timeline.white-bg .timeline-badge-userpic {
+    border-color: #fff;
+}
+.xysay .timeline .timeline-badge-userpic {
+    width: 150px;
+    border: 5px solid #f5f6fa;
+    -webkit-border-radius: 50%!important;
+    -moz-border-radius: 50%!important;
+    border-radius: 50%!important;
+}
+.xysay .timeline.white-bg .timeline-body, .timeline.white-bg .timeline-icon {
+    background-color: #fff;
+}
+.xysay .timeline .timeline-body {
+    position: relative;
+    padding: 50px;
+    margin-top: 60px;
+    margin-left: 180px;
+    background-color: #f5f6fa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.xysay .timeline.white-bg .timeline-body-arrow {
+    border-color: transparent #fff transparent transparent;
+}
+.xysay .timeline .timeline-body-arrow {
+    position: absolute;
+    top: 30px;
+    left: -14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 14px 14px 0;
+    border-color: transparent #f5f6fa transparent transparent;
+}
+.xysay .timeline .timeline-body-head {
+    margin-bottom: 10px;
+}
+.xysay a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
+    -webkit-border-radius: 0!important;
+    -moz-border-radius: 0!important;
+    border-radius: 0!important;
+}
+.xysay .timeline .timeline-body-head-caption {
+    float: left;
+}
+.xysay .timeline .timeline-body-alerttitle, .timeline .timeline-body-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+.xysay .font-blue-madison {
+    color: #578ebe!important;
+}
+.xysay .timeline .timeline-body-time {
+    font-size: 14px;
+    margin-left: 10px;
+}
+.xysay .font-grey-cascade {
+    color: #95A5A6!important;
+}
+.timeline .timeline-body-head-actions {
+    float: right;
+}
+.xysay .timeline .timeline-body-content {
+    font-size: 14px;
+    margin-top: 35px;
+}
+.xysay .font-grey-cascade {
+    color: #95A5A6!important;
+}
+.xysay .portlet>.portlet-body p {
+    margin-top: 0;
+}
+.xysay hr, p {
+    margin: 20px 0;
+}
+.xysay .timeline.white-bg:before {
+    background: #fff;
+}
+.xysay .timeline:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    background: #f5f6fa;
+    top: 0;
+    bottom: 0;
+    margin-left: 72px;
+}

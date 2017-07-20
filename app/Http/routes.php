@@ -17,6 +17,8 @@ Route::group(['namespace' => 'Home', 'middleware' => ['home.web']], function ($r
     $router->get('/{id}.html','ArticleController@show')->where(['id' => '\d+']);
     $router->get('cate/{id?}.html','CategoryController@show')->where(['id' => '\d+']);
     $router->get('search.html','SearchController@show')->where(['key' => '\s+']);
+    $router->get('about.html','HomeController@about');
+    $router->get('say.html','HomeController@say');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'],  function ($router) {
