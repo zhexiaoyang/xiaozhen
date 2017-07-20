@@ -4,7 +4,7 @@ $(function(){
 	//首页banner音乐播放
 	musicPlay();
 	//注册登录眼睛移入
-	setTimeout(moveeye, 800);
+	//setTimeout(moveeye, 800);
 	
 	/**
 	 * 返回顶部
@@ -14,14 +14,18 @@ $(function(){
 		$('html,body').animate({scrollTop:0},300);
 	});
 	$(window).scroll(function(){
-		var iScrollTop = $(window).scrollTop();
-		if(iScrollTop >= 100){
-			$('#returntop').addClass('show');
-		}else{
-			$('#returntop').removeClass('show');
-		}
+		returntop();
 	});
+	returntop();
 })
+function returntop() {
+	var iScrollTop = $(window).scrollTop();
+	if(iScrollTop >= 100){
+		$('#returntop').addClass('show');
+	}else{
+		$('#returntop').removeClass('show');
+	}
+}
 /**
  * 首页banner
  */
@@ -84,7 +88,7 @@ function moveeye(){
 				y: n[0].cenY //81
 			},
 			X = {
-				x: m.x + oLogoP.left,//959.5
+				x: m.x + oLogoP.left,
 				y: m.y + oLogoP.top //y = 181
 			},
 			o = 240;

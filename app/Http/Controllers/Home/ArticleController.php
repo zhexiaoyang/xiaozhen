@@ -17,9 +17,11 @@ class ArticleController extends CommonController
 
             }else{
                 // 未找到
+                abort(404);
             }
         }else{
             // 参数错误
+            abort(404);
         }
         return view('home.article.show')->with(compact(['article']));
     }

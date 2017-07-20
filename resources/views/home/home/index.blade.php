@@ -96,7 +96,7 @@
             @if(!empty($says))
                 @foreach($says as $say)
                     <div class="col-sm-4 col-md-4 citem2">
-                        <a href="javascript:void(0);" class="citem2_card">
+                        <a href="{{url('/say')}}.html" class="citem2_card">
                             <div class="item_top">
                                 @if($say['img_url'])
                                     <img class="services-v1-icon-wrap radius-circle" src="{{asset($say['img_url'])}}" alt="">

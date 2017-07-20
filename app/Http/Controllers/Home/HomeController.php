@@ -14,4 +14,14 @@ class HomeController extends CommonController
         $says = Say::statusEq1()->limit(3)->orderBy('created_at','desc')->get()->toArray();
         return view('home.home.index')->with(compact(['says']));
     }
+
+    public function about()
+    {
+        return view('home.home.about');
+    }
+    public function say()
+    {
+        $says = Say::statusEq1()->orderBy('created_at','desc')->get()->toArray();
+        return view('home.home.say')->with(compact(['says']));
+    }
 }
