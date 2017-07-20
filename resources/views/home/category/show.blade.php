@@ -8,7 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <i class="home_icon"></i><a href="{{asset('/')}}">首页</a>&rsaquo;<span>{{$category}}</span>
+                    <i class="home_icon"></i><a href="{{asset('/')}}">首页</a>&rsaquo;
+                    <span>{{$category}}</span>
                 </div>
             </div>
         </div>

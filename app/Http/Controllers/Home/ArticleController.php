@@ -14,7 +14,7 @@ class ArticleController extends CommonController
             $article = Article::statusEq1()->find($id);
             if (!empty($article))
             {
-
+                $category = Article::find($id)->category;
             }else{
                 // 未找到
                 abort(404);
@@ -23,6 +23,6 @@ class ArticleController extends CommonController
             // 参数错误
             abort(404);
         }
-        return view('home.article.show')->with(compact(['article']));
+        return view('home.article.show')->with(compact(['article','category']));
     }
 }

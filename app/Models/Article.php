@@ -14,6 +14,11 @@ class Article extends CommonModel
         return $query->where('status', 1);
     }
 
+    public function category()
+    {
+        return $this->hasOne('App\Models\Category','id', 'cid');
+    }
+
 //    public static function boot()
 //    {
 //        parent::boot();

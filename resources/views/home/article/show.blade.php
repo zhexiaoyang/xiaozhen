@@ -17,11 +17,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <i class="home_icon"></i><a href="{{url('/')}}">首页</a>&rsaquo;
-                    {{--@if($article)--}}
-                        {{--<a href="{{url('/cate/'.$article->cat_id)}}">{{$article->cat_name}}</a>&rsaquo;<span>{{$article->art_title}}</span>--}}
+                    @if($category)
+                        <a href="{{url('/cate/'.$category->id)}}.html">{{$category->name}}</a>
                     {{--@else--}}
                         {{--<a href="{{url('/cate/')}}">全部分类</a>--}}
-                    {{--@endif--}}
+                    @endif
                 </div>
             </div>
         </div>

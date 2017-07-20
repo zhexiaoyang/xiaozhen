@@ -10,7 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <i class="home_icon"></i><a href="/">首页</a>&rsaquo;<span>关于我</span>
+                <i class="home_icon"></i><a href="/">首页</a>&rsaquo;
+                <span>关于我</span>
             </div>
         </div>
     </div>
