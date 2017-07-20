@@ -12,7 +12,7 @@ class ArticleController extends CommonController
         {
             Article::where("id",$id)->increment("view");
             $article = Article::statusEq1()->find($id);
-            if (!empty($artcle))
+            if (!empty($article))
             {
 
             }else{
