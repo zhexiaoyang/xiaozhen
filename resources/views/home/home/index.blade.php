@@ -21,7 +21,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3 bannner_show">
-                            <a href="/about">
+                            <a href="/about.html">
                                 <div class="banner_img">
                                     <img src="{{asset('/home/assets/img/banner1.jpg')}}" alt="人生格言" />
                                     <p class="img_text">人生格言</p>
@@ -29,7 +29,7 @@
                             </a>
                         </div>
                         <div class="col-sm-3 bannner_show">
-                            <a href="/about">
+                            <a href="/about.html">
                                 <div class="banner_img">
                                     <img src="{{asset('/home/assets/img/banner2.jpg')}}" alt="人生阅历" />
                                     <p class="img_text">人生阅历</p>
@@ -37,7 +37,7 @@
                             </a>
                         </div>
                         <div class="col-sm-3 bannner_show">
-                            <a href="/about">
+                            <a href="/about.html">
                                 <div class="banner_img">
                                     <img src="{{asset('/home/assets/img/banner3.jpg')}}" alt="Just about me" />
                                     <p class="img_text">Just about me</p>
@@ -45,7 +45,7 @@
                             </a>
                         </div>
                         <div class="col-sm-3 bannner_show">
-                            <a href="/about">
+                            <a href="/about.html">
                                 <div class="banner_img">
                                     <img src="{{asset('/home/assets/img/banner4.jpg')}}" alt="其他" />
                                     <p class="img_text">其他</p>
