@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Jobs\SendReminderEmail;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -23,6 +24,13 @@ class AuthController extends CommonController
     public function showLoginForm()
     {
         return view('admin.login.index');
+    }
+
+    protected function authenticated($request, $admin)
+    {
+//        dd($this->dispatch(new SendReminderEmail($admin)));
+        $this->dispatch(new SendReminderEmail($admin));
+        return redirect()->intended($this->redirectPath());
     }
 
     protected function validateLogin(Request $request)
