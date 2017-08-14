@@ -22,21 +22,27 @@
                 <div class="col-sm-8 col-md-8 main_ct">
                     <div class="row">
                         @foreach($articles as $art)
-                            <div class="col-sm-4 col-md-4 citem">
-                                <a href="{{url('/'.$art->id)}}.html" class="citem_card">
-                                    <div class="item_top">
-                                        <img src="{{asset($art->img_url)}}"/>
+                            <article class="col-md-12 citem3">
+                                <div class="col-md-4">
+                                    <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}"/></a>
+                                </div>
+                                <div class="col-md-8">
+                                    <header  class="item_tt">
+                                        <a href="{{url('/'.$art['id'])}}.html">
+                                                {{--<span class="tag">--}}
+                                                    {{--{{isset($art['title'])?$art['title']:''}}--}}
+                                                    {{--<i class="arrow"></i>--}}
+                                                {{--</span>--}}
+                                                {{$art['title']}}
+                                        </a>
+                                    </header>
+                                    <div class="item_info">
+                                        <span class="time">更新 {{$art['created_at']}}</span>
+                                        <span class="view_number">{{$art['view']}}人看过</span>
                                     </div>
-                                    <div class="item_bottom">
-                                        <h2 class="item_tt">{{$art->title}}</h2>
-                                        <p class="item_desc">{{$art->description}}</p>
-                                        <div class="item_info">
-                                            <span class="time pull-left">更新 {{$art->created_at}}</span>
-                                            <span class="view_number pull-right">{{$art->view}}人看过</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    <p class="item_desc te2">{{$art['description']}}</p>
+                                </div>
+                            </article>
                         @endforeach
                         <nav class="text-center" style="clear: both;">
                             {{ $articles->links()}}
