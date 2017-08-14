@@ -76,7 +76,10 @@
                         </div>
                         <div class="col-md-8">
                             <header  class="item_tt">
-                                <a href="{{url('/'.$art['id'])}}.html"><span class="tag">{{isset($art['title'])?$art['title']:''}}<i class="arrow"></i></span>{{$art['title']}}</a>
+                                <a href="{{url('/'.$art['id'])}}.html">
+{{--                                    <span class="tag">{{isgit set($art['title'])?$art['title']:''}}<i class="arrow"></i></span>--}}
+                                    {{$art['title']}}
+                                </a>
                             </header>
                             <div class="item_info">
                                 <span class="time">更新 {{$art['created_at']}}</span>
