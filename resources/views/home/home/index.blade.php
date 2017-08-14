@@ -106,7 +106,7 @@
                             </div>
                             <div class="item_bottom">
                                 <h2 class="item_tt">{{$say['created_at']}}</h2>
-                                <p class="item_desc">{{$say['content']}}</p>
+                                <p class="item_desc te2">{{$say['content']}}</p>
                             </div>
                         </a>
                     </div>
