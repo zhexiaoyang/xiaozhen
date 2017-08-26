@@ -12,7 +12,7 @@ class ArticleController extends CommonController
 
     public function index()
     {
-        $list = Article::paginate(12);
+        $list = Article::orderBy('id','desc')->paginate(12);
         return view("admin.article.index",['list' => $list]);
     }
 

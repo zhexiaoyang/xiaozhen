@@ -45,7 +45,7 @@
                             </article>
                         @endforeach
                         <nav class="text-center" style="clear: both;">
-                            {{ $articles->links()}}
+                            {{ $articles->render() }}
                             {{--{!! $artcles->links() !!}--}}
                         </nav>
                     </div>

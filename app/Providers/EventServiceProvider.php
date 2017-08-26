@@ -13,8 +13,11 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\AdminLoginEvent' => [
-            'App\Listeners\EventListener',
+//        'App\Events\AdminLoginEvent' => [
+//            'App\Listeners\EventListener',
+//        ],
+        'App\Events\SnycSolrArticleEvent' => [
+            'App\Listeners\SolrArticleListener',
         ],
     ];
 

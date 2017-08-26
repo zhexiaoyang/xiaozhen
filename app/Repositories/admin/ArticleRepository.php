@@ -1,5 +1,6 @@
 <?php
 namespace App\Repositories\admin;
+use App\Events\SnycSolrArticleEvent;
 use App\Http\Requests\Request;
 use App\Models\Article;
 use App\Models\Category;
@@ -11,7 +12,7 @@ class ArticleRepository
     {
         $data = Category::statusEq1()->select('name','id','pid')->get()->toArray();
         $select = '<select class="form-control" name="cid">';
-        $select .= '<option value="0">顶级分类</option>';
+//        $select .= '<option value="0">顶级分类</option>';
         $select .= $this->getOption($data, $pid,  '-');
         $select .= '</select><label for="form_control_1">所属分类组</label><span class="help-block">请选择所属组...</span>';
         return $select;
@@ -76,6 +77,7 @@ class ArticleRepository
         $permission = new Article;
         $data = $request->all();
         if ($permission->fill($data)->save()) {
+            event(new SnycSolrArticleEvent($permission->id));
             return true;
         }
         return false;
@@ -92,6 +94,7 @@ class ArticleRepository
         $permission = Article::find($id);
         if ($permission) {
             if ($permission->fill($request->all())->save()) {
+                event(new SnycSolrArticleEvent($id));
 //                Flash::success(trans('alerts.permissions.updated_success'));
                 return true;
             }

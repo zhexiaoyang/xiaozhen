@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Events\SnycSolrArticleEvent;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -23,7 +24,8 @@ class SearchController extends CommonController
             } else {
                 $current_page = 1;
             }
-            $options = array('hostname' => 'localhost','wt' => 'json','path' => '/solr/blog',"port"=>"8983");
+            $options = config('solr.options');
+            $options['path'] = config('solr.article_path');
             $client = new \SolrClient($options);
             $query = new \SolrQuery();
             $query->setParam("q",$key);
@@ -48,7 +50,7 @@ class SearchController extends CommonController
                 foreach ($docs as $k => $item) {
                     $articles[$k]['id'] = $item->id;
                     $articles[$k]['img_url'] = $item->img_url;
-                    $articles[$k]['category_name'] = $item->category_name;
+                    $articles[$k]['category_name'] = isset($item->category_name);
                     $articles[$k]['created_at'] = date("Y-m-d H:i:s",strtotime($item->created_at));
                     $articles[$k]['title'] = isset($highlighting[$item['id']]->article_title[0])?$highlighting[$item['id']]->article_title[0]:$item->article_title;
 //                    $articles[$key]['description'] = isset($highlighting[$item['id']]->article_description[0])?$highlighting[$item['id']]->article_description[0]:$item->article_description;
