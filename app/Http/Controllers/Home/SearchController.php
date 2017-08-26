@@ -37,7 +37,7 @@ class SearchController extends CommonController
             $query->setParam("sort","id desc");
             $query->setHighlight (true);
             $query->setParam("hl.fl","article_title,article_content");
-            $query->setHighlightSimplePre("<em style='color:red'>");
+            $query->setHighlightSimplePre("<em style='color:#f4645f'>");
             $query->setHighlightSimplePost("</em>");
             $resp = $client->query($query);
             $result = $resp->getResponse();
@@ -50,7 +50,8 @@ class SearchController extends CommonController
                 foreach ($docs as $k => $item) {
                     $articles[$k]['id'] = $item->id;
                     $articles[$k]['img_url'] = $item->img_url;
-                    $articles[$k]['category_name'] = isset($item->category_name);
+                    $articles[$k]['view'] = $item->article_view;
+                    $articles[$k]['category_name'] = isset($item->category_name)?$item->category_name:'';
                     $articles[$k]['created_at'] = date("Y-m-d H:i:s",strtotime($item->created_at));
                     $articles[$k]['title'] = isset($highlighting[$item['id']]->article_title[0])?$highlighting[$item['id']]->article_title[0]:$item->article_title;
 //                    $articles[$key]['description'] = isset($highlighting[$item['id']]->article_description[0])?$highlighting[$item['id']]->article_description[0]:$item->article_description;

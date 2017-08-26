@@ -77,7 +77,12 @@
                         <div class="col-md-8">
                             <header  class="item_tt">
                                 <a href="{{url('/'.$art['id'])}}.html">
-{{--                                    <span class="tag">{{isgit set($art['title'])?$art['title']:''}}<i class="arrow"></i></span>--}}
+                                    @if(isset($art->category->name))
+                                        <span class="tag">
+                                            <i class="arrow"></i>
+                                            {{ $art->category->name }}
+                                        </span>
+                                    @endif
                                     {{$art['title']}}
                                 </a>
                             </header>

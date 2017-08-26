@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/editormd.css')}}"/>
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/editormd.preview.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/customer.css')}}">
+    <link rel="stylesheet" href="{{asset('home/assets/css/share.css')}}">
 @endsection
 @section('content')
     <!--position start-->
@@ -17,8 +18,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <i class="home_icon"></i><a href="{{url('/')}}">首页</a>&rsaquo;
-                    @if($category)
-                        <a href="{{url('/cate/'.$category->id)}}.html">{{$category->name}}</a>
+                    @if($article->category)
+                        <a href="{{url('/cate/'.$article->category->id)}}.html">{{$article->category->name}}</a>
                     {{--@else--}}
                         {{--<a href="{{url('/cate/')}}">全部分类</a>--}}
                     @endif
@@ -47,14 +48,56 @@
                             </div>
                         </article >
                         <div class="bdsharebuttonbox share">
-                            <span>分享 :</span>
-                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-                            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
-                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                            <div id="Share" style="display:block;">
+                                <ul>
+                                    <li title="分享到QQ空间"><a href="javascript:void(0)" class="share1"></a><span></span></li>
+                                    <li title="分享到新浪微博"><a href="javascript:void(0)" class="share2"></a><span></span></li>
+                                    <li title="分享到人人网"><a href="javascript:void(0)" class="share3"></a><span></span></li>
+                                    <li title="分享到朋友网"><a href="javascript:void(0)" class="share4"></a><span></span></li>
+                                    <li title="分享到腾讯微博"><a href="javascript:void(0)" class="share5"></a><span></span></li>
+                                    <li title="分享到开心网"><a href="javascript:void(0)" class="share6"></a><span></span></li>
+                                </ul>
+                            </div>
                         </div>
                         @parent
+                        {{--<div class="widget">--}}
+                            {{--<h2 class="widget_tt"><strong>留言板</strong></h2>--}}
+                            {{--<div class="comment">--}}
+                                {{--<textarea name="message"  placeholder="扯淡、吐槽、表扬、鼓励……想说啥就说啥！" class="message"></textarea>--}}
+                                {{--<button class="message_btn btn btn-default ">发表留言</button>--}}
+                            {{--</div>--}}
+                            {{--<section id="message">--}}
+                                {{--<h2 class="widget_tt"><strong>留言详情</strong></h2>--}}
+                                {{--<aside class="messageList" id="messageList">--}}
+                                    {{--<ul>--}}
+                                        {{--<li>--}}
+                                            {{--<section class="listbox">--}}
+                                                {{--<a href="" class="userimg"><img src="img/mysql.jpg" /></a>--}}
+                                                {{--<i class="arrows_icon"></i>--}}
+                                                {{--<article class="listitem">--}}
+                                                    {{--<header class="messagehd"><i class="triangle_icon"></i><a href="" class="username">zhangmeiming</a><time class="time">[2016-06-13 11:08:56]</time></header>--}}
+                                                    {{--<p class="messagecon">你好  怎么查看自己的VIP是不是到期了呢，现在续VIP  怎么计算费用呢</p>--}}
+                                                {{--</article>--}}
+                                                {{--<article class="listitem reply">--}}
+                                                    {{--<header class="messagehd"><i class="triangle_icon"></i>回复楼上 <a href="" class="username">zhangmeiming</a><time>[2016-06-13 11:08:56]</time></header>--}}
+                                                    {{--<p class="messagecon">你好  怎么查看自己的VIP是不是到期了呢，现在续VIP  怎么计算费用呢</p>--}}
+                                                {{--</article>--}}
+                                            {{--</section>--}}
+                                        {{--</li>--}}
+                                        {{--<li>--}}
+                                            {{--<section class="listbox">--}}
+                                                {{--<a href="" class="userimg"><img src="img/mysql.jpg" /></a>--}}
+                                                {{--<i class="arrows_icon"></i>--}}
+                                                {{--<article class="listitem">--}}
+                                                    {{--<header class="messagehd"><i class="triangle_icon"></i><a href="" class="username">zhangmeiming</a><time class="time">[2016-06-13 11:08:56]</time></header>--}}
+                                                    {{--<p class="messagecon">你好  怎么查看自己的VIP是不是到期了呢，现在续VIP  怎么查看自己的VIP是不是到期了呢怎么查看自己的VIP是不是到期了呢怎么查看自己的VIP是不是到期了呢</p>--}}
+                                                {{--</article>--}}
+                                            {{--</section>--}}
+                                        {{--</li>--}}
+                                    {{--</ul>--}}
+                                {{--</aside>--}}
+                            {{--</section>--}}
+                        {{--</div>--}}
                     </div>
                 </div>
             </div>
@@ -63,6 +106,7 @@
     <!--content end-->
 @endsection
 @section('bottom')
+    <script src="{{asset('home/assets/js/share.js')}}"></script>
     <script src="{{asset('vendor/editormd/js/editormd.js')}}"></script>
     <script src="{{asset('vendor/editormd/lib/marked.min.js')}}"></script>
     <script src="{{asset('vendor/editormd/lib/prettify.min.js')}}"></script>

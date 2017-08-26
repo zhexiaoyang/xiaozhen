@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Events\SnycSolrArticleEvent;
 use App\Models\Article;
 
 class ArticleController extends CommonController
@@ -10,11 +11,11 @@ class ArticleController extends CommonController
     {
         if ($id)
         {
-            Article::where("id",$id)->increment("view");
             $article = Article::statusEq1()->find($id);
             if (!empty($article))
             {
-                $category = Article::find($id)->category;
+                Article::where("id",$id)->increment("view");
+                event(new SnycSolrArticleEvent($id));
             }else{
                 // 未找到
                 abort(404);

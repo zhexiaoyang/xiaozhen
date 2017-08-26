@@ -41,12 +41,13 @@ class SolrArticleListener
             $document = new \SolrInputDocument();
             $document->addField('id',$article->id);
             $document->addField('img_url',$article->img_url);
+            $document->addField('article_view',$article->view);
             $document->addField('created_at',gmdate('Y-m-d\TH:i:s\Z',strtotime($article->created_at)));
             $document->addField('article_title',$article->title);
             $document->addField('article_content',$article->content);
             $document->addField('article_description',$article->description);
             $document->addField('category_id',$category->id);
-            $document->addField('category_name',$article->name);
+            $document->addField('category_name',$category->name);
             $client->addDocument($document);
             $client->commit();
         }

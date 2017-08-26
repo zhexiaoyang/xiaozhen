@@ -16,7 +16,7 @@ class Article extends CommonModel
 
     public function category()
     {
-        return $this->hasOne('App\Models\Category','id', 'cid');
+        return $this->belongsTo('App\Models\Category','cid');
     }
 
 //    public static function boot()

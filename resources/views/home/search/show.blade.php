@@ -29,16 +29,18 @@
                                     <div class="col-md-8">
                                         <header  class="item_tt">
                                             <a href="{{url('/'.$art['id'])}}.html">
+                                                @if($art['category_name'])
                                                 <span class="tag">
-                                                    {{isset($art['category_name'])?$art['category_name']:''}}
+                                                    {{$art['category_name']}}
                                                     <i class="arrow"></i>
                                                 </span>
+                                                @endif
                                                 {!! $art['title'] !!}
                                             </a>
                                         </header>
                                         <div class="item_info">
                                             <span class="time">更新 {{$art['created_at']}}</span>
-{{--                                            <span class="view_number">{{$art['view']}}人看过</span>--}}
+                                            <span class="view_number">{{$art['view']}}人看过</span>
                                         </div>
                                         <p class="item_desc te2">{!! $art['content'] !!}</p>
                                     </div>

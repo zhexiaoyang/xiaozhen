@@ -13,6 +13,10 @@ class Category extends CommonModel
     {
         return $query->where('status', 1);
     }
+    public function article()
+    {
+        return $this->hasMany('App\Models\Article','cid');
+    }
 
 //    public static function boot()
 //    {

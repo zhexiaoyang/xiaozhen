@@ -17,8 +17,7 @@ class FrontServiceProvider extends ServiceProvider
         view()->composer('*', function ($view) {
             //共享菜单数据
             $navs = Nav::statusEq1()->orderBy('sort','desc')->get()->toArray();
-            $new_articles = Article::statusEq1()->limit(8)->select('id','img_url','title','description','created_at','view')->orderBy('created_at','desc')->limit(8)->get()->toArray();
-
+            $new_articles = Article::statusEq1()->select('id','cid','img_url','title','description','created_at','view')->orderBy('created_at','desc')->limit(8)->get();
             $view->with(compact(['navs','new_articles']));
         });
     }
