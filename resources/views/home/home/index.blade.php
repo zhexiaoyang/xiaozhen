@@ -75,7 +75,7 @@
                         @foreach($rec_articles as $art)
                             <article class="col-md-12 citem3">
                                 <div class="col-md-4">
-                                    <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}"/></a>
+                                    <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}" alt="{{$art['title']}}"/></a>
                                 </div>
                                 <div class="col-md-8">
                                     <header  class="item_tt">
@@ -134,9 +134,9 @@
                                     <a href="{{url('/say')}}.html" class="citem2_card">
                                         <div class="item_top">
                                             @if($say['img_url'])
-                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset($say['img_url'])}}" alt="">
+                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset($say['img_url'])}}" alt="{{$say['title']}}">
                                             @else
-                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset('/home/assets/img/say1.jpg')}}" alt="">
+                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset('/home/assets/img/say1.jpg')}}" alt="{{$say['title']}}">
                                             @endif
                                         </div>
                                         <div class="item_bottom">
@@ -147,6 +147,12 @@
                                 </div>
                             @endforeach
                         @endif
+                    </div>
+                </div>
+                <div class="widget">
+                    <h2 class="widget_tt">关注小振公众号</h2>
+                    <div class="recommend">
+                        <img src="http://blog.img.625buy.com/weixin.jpg" style="width: 100%;" alt="关注小振公众号">
                     </div>
                 </div>
             </aside>

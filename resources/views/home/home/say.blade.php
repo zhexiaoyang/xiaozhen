@@ -23,7 +23,7 @@
                     @foreach($says as $say)
                     <div class="timeline-item">
                         <div class="timeline-badge">
-                            <img class="timeline-badge-userpic" src="{{$say['img_url']}}">
+                            <img class="timeline-badge-userpic" src="{{$say['img_url']}}" alt="{{$say['title']}}">
                         </div>
                         <div class="timeline-body">
                             <div class="timeline-body-arrow"> </div>

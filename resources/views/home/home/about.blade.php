@@ -24,25 +24,25 @@
             <div class="col-sm-3 col-md-3">
                 <a href="javascript:void(0);" class="active">
                     <span>人生格言</span>
-                    <img src="{{asset('/home/assets/img/banner1.jpg')}}"/>
+                    <img src="{{asset('/home/assets/img/banner1.jpg')}}" alt="人生格言"/>
                 </a>
             </div>
             <div class="col-sm-3 col-md-3">
                 <a href="javascript:void(0);">
                     <span>人生阅历</span>
-                    <img src="{{asset('/home/assets/img/banner2.jpg')}}"/>
+                    <img src="{{asset('/home/assets/img/banner2.jpg')}}" alt="人生阅历"/>
                 </a>
             </div>
             <div class="col-sm-3 col-md-3">
                 <a href="javascript:void(0);">
                     <span>Just about me</span>
-                    <img src="{{asset('/home/assets/img/banner3.jpg')}}"/>
+                    <img src="{{asset('/home/assets/img/banner3.jpg')}}" alt="Just about me"/>
                 </a>
             </div>
             <div class="col-sm-3 col-md-3">
                 <a href="javascript:void(0);">
                     <span>其他</span>
-                    <img src="{{asset('/home/assets/img/banner4.jpg')}}"/>
+                    <img src="{{asset('/home/assets/img/banner4.jpg')}}" alt="其他"/>
                 </a>
             </div>
         </div>

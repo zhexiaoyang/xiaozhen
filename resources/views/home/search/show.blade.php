@@ -26,7 +26,7 @@
                         @foreach($articles as $art)
                                 <article class="col-md-12 citem3">
                                     <div class="col-md-4">
-                                        <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}"/></a>
+                                        <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}" alt="{!! $art['title'] !!}"/></a>
                                     </div>
                                     <div class="col-md-8">
                                         <header  class="item_tt">
