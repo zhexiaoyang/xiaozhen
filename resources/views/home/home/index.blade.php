@@ -67,61 +67,99 @@
     <!--content start-->
     <div class="container ">
         <div class="row">
-            <h2 class="article_tt">最新文章</h2>
-            @if(!empty($new_articles))
-                @foreach($new_articles as $art)
-                    <article class="col-md-12 citem3">
-                        <div class="col-md-4">
-                            <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}"/></a>
-                        </div>
-                        <div class="col-md-8">
-                            <header  class="item_tt">
-                                <a href="{{url('/'.$art['id'])}}.html">
-                                    @if(isset($art->category->name))
-                                        <span class="tag">
-                                            <i class="arrow"></i>
-                                            {{ $art->category->name }}
-                                        </span>
-                                    @endif
-                                    {{$art['title']}}
-                                </a>
-                            </header>
-                            <div class="item_info">
-                                <span class="time">更新 {{$art['created_at']}}</span>
-                                <span class="view_number">{{$art['view']}}人看过</span>
-                            </div>
-                            <p class="item_desc te2">{{$art['description']}}</p>
-                        </div>
-                    </article>
-                @endforeach
-            @endif
-        </div>
-    </div>
-    <!--个人日记 start-->
-    <div class="container">
-        <div class="row">
-            <h2 class="article_tt">嘚吧嘚</h2>
-            @if(!empty($says))
-                @foreach($says as $say)
-                    <div class="col-sm-4 col-md-4 citem2">
-                        <a href="{{url('/say')}}.html" class="citem2_card">
-                            <div class="item_top">
-                                @if($say['img_url'])
-                                    <img class="services-v1-icon-wrap radius-circle" src="{{asset($say['img_url'])}}" alt="">
-                                @else
-                                    <img class="services-v1-icon-wrap radius-circle" src="{{asset('/home/assets/img/say1.jpg')}}" alt="">
-                                @endif
-                            </div>
-                            <div class="item_bottom">
-                                <h2 class="item_tt">{{$say['created_at']}}</h2>
-                                <p class="item_desc te2">{{$say['content']}}</p>
-                            </div>
-                        </a>
+
+            <div class="col-sm-8 col-md-8 main_ct">
+                <div class="row">
+                    <h2 class="article_tt">推荐文章</h2>
+                    @if(!empty($rec_articles))
+                        @foreach($rec_articles as $art)
+                            <article class="col-md-12 citem3">
+                                <div class="col-md-4">
+                                    <a href="{{url('/'.$art['id'])}}.html" class="item_img"><img src="{{asset($art['img_url'])}}"/></a>
+                                </div>
+                                <div class="col-md-8">
+                                    <header  class="item_tt">
+                                        <a href="{{url('/'.$art['id'])}}.html">
+                                            @if(isset($art->category->name))
+                                                <span class="tag">
+                                                    <i class="arrow"></i>
+                                                    {{ $art->category->name }}
+                                                </span>
+                                            @endif
+                                            {{$art['title']}}
+                                        </a>
+                                    </header>
+                                    <div class="item_info">
+                                        <span class="time">更新 {{$art['created_at']}}</span>
+                                        <span class="view_number">{{$art['view']}}人看过</span>
+                                    </div>
+                                    <p class="item_desc te2">{{$art['description']}}</p>
+                                </div>
+                            </article>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            <aside class="col-sm-4 col-md-4 sidebar">
+                <div class="widget">
+                    <h2 class="widget_tt">这个东西叫盼头</h2>
+                    <div>
+                            <div class="clear">距离春节还有：</div>
+                            <div id="day" class="countdown">--</div>
+                            <div class="countdown">天</div>
+                            <div id="hours" class="countdown">--</div>
+                            {{--<div class="countdown">:</div>--}}
+                            <div id="minutes" class="countdown">--</div>
+                            {{--<div class="countdown">:</div>--}}
+                            <div id="seconds" class="countdown">--</div>
+                            <div class="clear"></div>
                     </div>
-                @endforeach
-            @endif
+                </div>
+                <div class="widget">
+                    <h2 class="widget_tt">最新文章</h2>
+                    <div class="recommend">
+                        <ul class="recommend_list">
+                            @foreach($new_articles as $m => $n)
+                                <li><a href="{{url('/'.$n['id'])}}.html" class="ellipsis_text"><span>{{$m+1}}</span>{{$n['title']}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="row">
+                        <h2 class="widget_tt">我爱嘚吧嘚</h2>
+                        @if(!empty($says))
+                            @foreach($says as $say)
+                                <div class="col-sm-12 col-md-12 citem2">
+                                    <a href="{{url('/say')}}.html" class="citem2_card">
+                                        <div class="item_top">
+                                            @if($say['img_url'])
+                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset($say['img_url'])}}" alt="">
+                                            @else
+                                                <img class="services-v1-icon-wrap radius-circle" src="{{asset('/home/assets/img/say1.jpg')}}" alt="">
+                                            @endif
+                                        </div>
+                                        <div class="item_bottom">
+                                            <h2 class="item_tt">{{$say['created_at']}}</h2>
+                                            <p class="item_desc te2">{{$say['content']}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </aside>
         </div>
     </div>
-    <!--个人日记 end-->
     <!--content end-->
+@endsection
+
+@section('bottom')
+<script src="{{asset('/home/assets/js/countdown.js')}}"></script>
+<script>
+    // 日 时 分 秒的dom对象
+    countDownTime.init('2018/2/12 00:00:00', day, hours, minutes, seconds);
+    countDownTime.start();
+</script>
 @endsection

@@ -18,7 +18,8 @@ class FrontServiceProvider extends ServiceProvider
             //共享菜单数据
             $navs = Nav::statusEq1()->orderBy('sort','desc')->get()->toArray();
             $new_articles = Article::statusEq1()->select('id','cid','img_url','title','description','created_at','view')->orderBy('created_at','desc')->limit(8)->get();
-            $view->with(compact(['navs','new_articles']));
+            $rec_articles = Article::statusEq1()->select('id','cid','img_url','title','description','created_at','view')->where('is_rec','=',1)->orderBy('sort','desc')->orderBy('created_at','desc')->limit(8)->get();
+            $view->with(compact(['navs','new_articles','rec_articles']));
         });
     }
 
