@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('title')
-    <title>{{Config::get('web.web_title')}}</title>
-    <meta name="keywords" content="个人博客,张振个人博客,小振个人博客,张振" />
-    <meta name="description" content="张振个人博客,小振个人博客。" />
+    <title>{{Config::get('web.web_title')}}{{Config::get('web.web_title_description')}}</title>
+    <meta name="keywords" content="个人博客,个人博客网站，个人网站,张振个人博客,小振个人博客,张振" />
+    <meta name="description" content="{{Config::get('web.web_title')}}{{Config::get('web.web_title_description')}}" />
 @endsection
 @section('content')
     <!--banner start-->

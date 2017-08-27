@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('title')
 <title>关于我-{{Config::get('web.web_title')}}</title>
-<meta name="keywords" content="小振 关于我" />
-<meta name="description" content="小振 关于我">
+<meta name="keywords" content="关于我,技术,生活，张振个人博客" />
+<meta name="description" content="关于我{{Config::get('web.web_title_description')}}" />
 @endsection
 @section('content')
 <!--position start-->

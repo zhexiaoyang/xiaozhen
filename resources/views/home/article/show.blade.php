@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('title')
     <title>{{isset($article['title'])?$article['title'].'-':''}}{{Config::get('web.web_title')}}</title>
-    <meta name="keywords" content="个人博客,张振个人博客,小振个人博客,张振" />
-    <meta name="description" content="{{isset($article['title'])?$article['title'].'-':''}}{{Config::get('web.web_title')}}" />
+    <meta name="keywords" content="文章,技术,生活，张振个人博客" />
+    <meta name="description" content="{{isset($article['title'])?$article['title']:''}}{{Config::get('web.web_title')}}" />
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/editormd.css')}}"/>
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/editormd.preview.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/editormd/css/customer.css')}}">
