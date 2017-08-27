@@ -1,8 +1,8 @@
 @extends('layouts.home')
 @section('title')
 <title>嘚吧嘚-{{Config::get('web.web_title')}}</title>
-<meta name="keywords" content="小振，嘚吧嘚，说一说" />
-<meta name="description" content="小振，嘚吧嘚，说一说">
+<meta name="keywords" content="个人博客,张振个人博客,小振个人博客,张振" />
+<meta name="description" content="{{isset($article['title'])?$article['title'].'-':''}}{{Config::get('web.web_title')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('/home/assets/css/say.css')}}"/>
 @endsection
 @section('content')
