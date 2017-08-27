@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><em></em><span>Z</span><span>h</span><span>e</span><span>n</span><span>B</span><span>l</span><span>o</span><span>g</span>
+                <a class="navbar-brand" href="{{asset('/')}}"><em></em><span>Z</span><span>h</span><span>e</span><span>n</span><span>B</span><span>l</span><span>o</span><span>g</span>
                     <strong>小振博客</strong>
                 </a>
             </div>
