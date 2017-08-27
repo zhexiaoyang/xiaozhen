@@ -10,9 +10,9 @@
         <div class="banner_bg">
             <div class="row">
                 <p class="banner_text">{{Config::get('web.banner_title')}}<i class="music_icon"></i></p>
-                <p class="banner_text">我们不停的翻着回忆</p>
-                <p class="banner_text">却在于找不到那时的自己</p>
-                <p class="banner_text">红尘一梦，不再追寻</p>
+                <p class="banner_text">少走了弯路</p>
+                <p class="banner_text">也就错过了风景</p>
+                <p class="banner_text">无论如何，感谢经历</p>
                 <audio loop id="music" class="music_play">
                     <source src="{{Config::get('web.index_music')}}"></source>
                 </audio>
