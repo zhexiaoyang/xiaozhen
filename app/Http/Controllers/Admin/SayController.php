@@ -12,7 +12,7 @@ class SayController extends CommonController
 
     public function index()
     {
-        $list = Say::paginate(12);
+        $list = Say::orderBy('id','desc')->paginate(12);
         return view("admin.say.index",['list' => $list]);
     }
 
